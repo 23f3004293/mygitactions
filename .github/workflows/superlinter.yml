@@ -5,24 +5,23 @@ on:
     branches:
       - master
   schedule:
-    - cron: "10 6 * * *"  # Runs every day at 00:30 UTC (~6:00 AM IST)
+    - cron: "15 6 * * *"  # ✅ 6:15 AM IST = 00:10 UTC
   workflow_dispatch:
 
 jobs:
   super-lint:
-    
     name: Lint code base
     runs-on: ubuntu-latest
+
     steps:
       - name: 23f3004293@ds.study.iitm.ac.in
         run: echo "Hello, world!"
-        
+
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
