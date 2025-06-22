@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "15 6 * * *"  # ✅ 6:15 AM IST = 00:10 UTC
+    - cron: "16 6 * * *"  # 6:16 AM IST
   workflow_dispatch:
 
 jobs:
@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 23f3004293@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+      - name: 23f3004293@ds.study.iitm.ac.in  # ✅ MUST appear exactly like this
+        run: echo "This step is named after my email"
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,3 +25,4 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
