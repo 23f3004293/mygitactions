@@ -1,7 +1,9 @@
 name: Super-Linter
 
 on: 
-  push
+  push:
+    branches:
+      - master
   schedule:
     - cron: "10 6 * * *"  # Runs every day at 00:30 UTC (~6:00 AM IST)
   workflow_dispatch:
