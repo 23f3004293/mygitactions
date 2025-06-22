@@ -1,6 +1,10 @@
 name: Super-Linter
 
-on: push
+on: 
+  push
+  schedule:
+    - cron: "10 6 * * *"  # Runs every day at 00:30 UTC (~6:00 AM IST)
+  workflow_dispatch:
 
 jobs:
   super-lint:
